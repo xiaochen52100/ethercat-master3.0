@@ -12,12 +12,11 @@ CPP=$(CROSS_COMPILE)g++
 CC=$(CROSS_COMPILE)gcc
 
 PROJPATH = .
-#LIB=-L$(PROJPATH)/../../SDK/LIB/Linux/armv6-vfp-eabihf -lAtemRasSrv -lEcMaster -lkyapi -lpthread -lm -ldl -lrt
-LIB=-L$(PROJPATH)/../../SDK/LIB/Linux/armv6-vfp-eabihf -lAtemRasSrv -lEcMaster -lkyapi -lpthread -lm -ldl -lrt
+LIB=-L$(PROJPATH)/../../SDK/LIB/Linux/armv6-vfp-eabihf -lAtemRasSrv -lEcMaster -lkyapi -lpthread -lm -ldl -lrt -L$(PROJPATH)/../motrotech/ -lmotrotech
 SRC=$(PROJPATH)/
 
 # OBJECTS
-OBJECTS = DCDemo.o ecatDemoCommon.o ecatNotification.o Logging.o selectLinkLayer.o EcTimer.o motrotech.o
+OBJECTS = DCDemo.o ecatDemoCommon.o ecatNotification.o Logging.o selectLinkLayer.o EcTimer.o# motrotech.o
 
 OEMOBJECTS = DCDemoMain.o
 
@@ -25,7 +24,7 @@ EXTLINKS=
 
 
 all:	$(OBJECTS) $(OEMOBJECTS) 
-		$(CPP) -L. -o $(TARGET) $(OEMOBJECTS) $(OBJECTS) $(CFLAGS) $(LIB) 
+		$(CPP) -L. -o $(TARGET) $(OEMOBJECTS) $(OBJECTS) $(CFLAGS) $(LIB) -fPIC -rdynamic -Wl,-rpath,./
 
 DCDemoMain.o:		DCDemoMain.cpp
 		$(CPP) $(CFLAGS) -c $<

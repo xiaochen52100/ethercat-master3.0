@@ -592,7 +592,7 @@ EC_T_DWORD DCDemo(
     // {
     // 	Process_Switch(i, COMMAND_START);
     // }
-    //Process_Switch(5, COMMAND_START);
+    
 
     while (bRun && (!pDemoThreadParam->oDuration.IsStarted() || !pDemoThreadParam->oDuration.IsElapsed()))
     {
@@ -1007,7 +1007,7 @@ Exit:
 
 /*-MYAPP---------------------------------------------------------------------*/
 
-#define DEMO_MAX_NUM_OF_SLAVES     16//WZZ
+#define DEMO_MAX_NUM_OF_SLAVES     16
 
 /***************************************************************************************************/
 /**
@@ -1019,7 +1019,7 @@ static EC_T_DWORD myAppInit(T_DEMO_THREAD_PARAM* pDemoThreadParam)
 {
     EC_UNREFPARM(pDemoThreadParam);
 
-    myInit(pDemoThreadParam);//wzz
+    myInit(pDemoThreadParam);
     return EC_E_NOERROR;
 }
 
