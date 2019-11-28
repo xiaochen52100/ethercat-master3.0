@@ -1,11 +1,3 @@
-/*************************************************************     
-    FileName : config.h 
-    FileFunc : 定义头文件    
-    Version  : V0.1     
-    Author   : Sunrier     
-    Date     : 2012-05-09 
-    Descp    : Linux下获取配置文件信息     
-*************************************************************/
 #ifndef   _CONFIG_H
 #define   _CONFIG_H
 

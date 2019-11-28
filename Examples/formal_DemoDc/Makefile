@@ -1,7 +1,7 @@
 #generally makefile for EtherCAT for linux
 #questions: Motrotech, info@motrotech.com
 
-TARGET= demo3.0
+TARGET= EcMasterDc
 INCFLAGS=-I$(PROJPATH)/../../SDK/INC -I$(PROJPATH)/../../SDK/INC/Linux -I$(PROJPATH)/
 
 # add -D_CONSOLE to enable the default trace implemenation (fprintf to stderr)

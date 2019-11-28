@@ -1,10 +1,8 @@
-extern "C"
-{
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "config.h"
-}
+
 #define  SUCCESS           0x00 /*成功*/
 #define  FAILURE           0x01 /*失败*/
 int GetConfigStringValue(char *pInFileName, char *pInSectionName, char *pInKeyName, char *pOutKeyValue)

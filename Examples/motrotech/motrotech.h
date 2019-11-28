@@ -211,7 +211,7 @@ enum eMoveState
    EMoving,
    EPause,
    Homing,
-   Starting
+   P2P
 };
 
 /* DS402 modes of operation 0x6060 */

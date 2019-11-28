@@ -235,7 +235,6 @@ EC_T_DWORD DCDemo(
             }
         }
         dwRes = ecatInitMaster(&oInitParms);
-	//OsSleep(1000);//wzz 2019/6/3  motrotech zhanglishan  advise
         if (dwRes != EC_E_NOERROR)
         {
             dwRetVal = dwRes;
@@ -1017,10 +1016,11 @@ Exit:
 */
 static EC_T_DWORD myAppInit(T_DEMO_THREAD_PARAM* pDemoThreadParam)
 {
+    EC_T_DWORD dwRes = EC_E_NOERROR;
     EC_UNREFPARM(pDemoThreadParam);
 
-    myInit(pDemoThreadParam);
-    return EC_E_NOERROR;
+    dwRes=myInit(pDemoThreadParam);
+    return dwRes;
 }
 
 /***************************************************************************************************/
@@ -1035,7 +1035,8 @@ static EC_T_DWORD myAppPrepare(T_DEMO_THREAD_PARAM* pDemoThreadParam)
     EC_T_WORD           wFixedAddress = INVALID_FIXED_ADDR;
 
     EC_UNREFPARM(pDemoThreadParam);
-    myPrepare(pDemoThreadParam,ecvendor_tsino_dynatron,0x1);
+    //myPrepare(pDemoThreadParam,ecvendor_tsino_dynatron,0x1);
+    myPrepare(pDemoThreadParam,ecvendor_omron,0x6);
     return EC_E_NOERROR;
 }
 
